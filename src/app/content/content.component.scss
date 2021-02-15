@@ -1,4 +1,5 @@
-.services{
+:host{
+  .services{
     position: relative;
     padding: 80px;
 }
@@ -187,12 +188,7 @@ body, html {
         position: relative;
         font-size:10px;
        visibility: inherit;
-       
-    
-  
-    
       }
-
     }
   @media screen and (max-width: 989px) {
     .yazi2{
@@ -223,4 +219,4 @@ body, html {
         margin-top:0px;
       }
     }
-  
+}

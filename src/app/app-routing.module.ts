@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { FirstComponent } from './first/first.component';
 import { ContentComponent } from './content/content.component';
-import { SecondComponent } from './second/second.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
-  { path: 'first', component: FirstComponent },
-  { path: 'content', component: ContentComponent },
-  { path: 'second', component: SecondComponent },
-  { path: '', redirectTo: 'content',  pathMatch: 'full'}
+  { path: 'category/:categoryslug', component: DetailsComponent },
+  { path: 'post/:postslug', component: DetailsComponent },
+  { path: '', component: ContentComponent },
 ];
 
 // configures NgModule imports and exports

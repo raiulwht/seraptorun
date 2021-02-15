@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SpicaService, BlogClass} from '../services/spica.service'
+import {SpicaService, Blog} from '../services/spica.service'
 import { Observable } from 'rxjs';
+import { tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-content',
@@ -9,16 +10,15 @@ import { Observable } from 'rxjs';
 })
 export class  ContentComponent implements OnInit {
 
-  blog: Observable<BlogClass[]>
+  blogs: Observable<Blog[]>
   title: string
 
   constructor(private spica: SpicaService) { }
 
   ngOnInit(): void {
-    this.blog = this.spica.getAllBlog()
-
-    //this.blog.subscribe(data => console.log(data))
-    //console.log("blog", this.blog)
+    this.blogs = this.spica.getAllBlog().pipe(
+      tap(console.log)
+    )
   }
 
 }

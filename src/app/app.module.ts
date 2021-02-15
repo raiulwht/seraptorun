@@ -8,14 +8,15 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { CustomHttpInterceptor } from './services/custom.http.intercepor';
-import { FirstComponent } from './first/first.component';
 import { FilterPipe } from './filter.pipe';
-import { ThirdComponent } from './third/third.component'
-import { SecondComponent } from './second/second.component';
-import { FourthComponent } from './fourth/fourth.component';
-import { FifthComponent } from './fifth/fifth.component';
-import { SixthComponent } from './sixth/sixth.component';
-
+import { DetailsComponent } from './details/details.component';
+import { CommonModule } from '@angular/common';
+import { FeaturedImageComponent } from './components/featured-image/featured-image.component';
+import { SearchMenuComponent } from './components/search-menu/search-menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { CategoryComponent } from './category/category.component';
+import { MinimalPostComponent } from './components/minimal-post/minimal-post.component';
 
 
 @NgModule({
@@ -24,18 +25,20 @@ import { SixthComponent } from './sixth/sixth.component';
     NavbarComponent,
     ContentComponent,
     FooterComponent,
-    FirstComponent,
     FilterPipe,
-    SecondComponent,
-    ThirdComponent,
-    FourthComponent,
-    FifthComponent,
-    SixthComponent
+    DetailsComponent,
+    FeaturedImageComponent,
+    SearchMenuComponent,
+    CategoryComponent,
+    MinimalPostComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true}

@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid" style="background-color:white; z-index:-1; padding: 0; height: auto;"
+  *ngIf="blogDetails | async; let blog;">
+  <featured-image [img]="'assets/stonee.jpg'"></featured-image>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <b><a class="title">{{ blog.title }}</a></b>
+        <div class="article" [innerHTML]="blog.article"></div>
+        <div class="meta-info d-flex">
+          <div class="date d-flex align-items-center">
+            <img src="assets/clock.png" class="mr-1" height="15px" width="15px"> {{ blog.created_at | date:"dd-MM-yyyy"}}
+          </div>
+          <div class="author pl-3 d-flex align-items-center">
+            <img src="assets/newspaper.png" class="mr-1" height="15px" width="15px"> {{blog.author}}
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <search-menu></search-menu>
+      </div>
+    </div>
+  </div>
+</div>

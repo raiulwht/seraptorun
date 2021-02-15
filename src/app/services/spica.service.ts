@@ -12,36 +12,41 @@ export class SpicaService {
 
 
 
-  public getAllBlog(): Observable<BlogClass[]> {
-    return this.httpClient.get<BlogClass[]>(
+  public getAllBlog(): Observable<Blog[]> {
+    return this.httpClient.get<Blog[]>(
       `${this.url}bucket/5fd9d9b8271b3c002c56001e/data?limit=20&sort={"created_at":-1}`
     );
   }
 
 
 
-  public getBlogDetails(id:string): Observable<BlogClass[]> {
-    return this.httpClient.get<BlogClass[]>(
+  public getBlogDetails(id:string): Observable<Blog[]> {
+    return this.httpClient.get<Blog[]>(
       `${this.url}bucket/5fd9d9b8271b3c002c56001e/data/${id}`
     );
   }
 
- public getBlogsDetails(): Observable<BlogClass[]> {
-    return this.httpClient.get<BlogClass[]>(
+  public getBlogBySlug(slug:string): Observable<Blog[]> {
+    return this.httpClient.get<Blog[]>(
+      `${this.url}bucket/5fd9d9b8271b3c002c56001e/data?filter=slug=='${slug}'`
+    );
+  }
+
+ public getBlogsDetails(): Observable<Blog[]> {
+    return this.httpClient.get<Blog[]>(
       `${this.url}bucket/5fd9d9b8271b3c002c56001e/data?limit=1&sort={"created_at":-1}`
     );
   }
 }
-export class BlogClass {
-  constructor(
-    public _id: string,
-    public created_at: Date,
-    public titles: string,
-    public title: string,
-    public article: string,
-    public author: boolean,
-    public thumbnail: string
-  ) {}
+export interface Blog {
+  _id: string,
+  created_at: Date,
+  titles: string,
+  title: string,
+  article: string,
+  author: boolean,
+  thumbnail: string,
+  slug: string
 }
 
 
