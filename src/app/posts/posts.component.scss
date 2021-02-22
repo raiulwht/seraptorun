@@ -1,0 +1,40 @@
+.blogthumb{
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    float: left;
+    min-height: 45px;
+}
+.date{
+    margin-bottom: 15px;
+    font-weight: 500;
+    float: left;
+}
+.postbox{
+margin-bottom: 40px;
+width: 333px;
+margin-right: 15px;
+}
+.Author{
+    margin-bottom: 15px;
+    font-weight: 500;
+    float: left;
+    margin-left: 15px;
+}
+.clear{
+    clear: both;
+}
+ .article_text{
+        padding-right: 40px; 
+        position: relative;
+        display:-webkit-box;
+        -webkit-line-clamp: 11;
+        -webkit-box-orient: vertical; 
+        overflow:hidden;
+  }
+ @media screen and (max-width: 989px) {
+    .posts{right:10%; position: relative;}
+    .article_text{
+        padding-right: 0px; 
+        position: relative;
+      }}

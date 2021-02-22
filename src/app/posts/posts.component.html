@@ -1,0 +1,32 @@
+<div class="postbox offset-2 offset-sm-5 offset-xl-0 offset-md-5 offset-lg-1 " *ngFor="let blog of blogs | async">
+<img style="border-radius:10px; width:400px; height:200px;" class="img-fluid" [src]="blog.thumbnail">
+
+<article>
+
+  <a routerLink="/post/{{blog.slug}}">
+    <a class="blogthumb" style="text-decoration:none;" routerLinkActive="active">
+      <div class="col-12">
+        <h1 style=" padding-right:0px;    text-decoration: none;"><u>
+            <abbr title='{{ blog.title }}'>
+              <div style="overflow: hidden; white-space: nowrap; text-overflow:line;">
+                {{blog.title}}</div>
+            </abbr>
+          </u>
+        </h1>
+      </div>
+    </a>
+  </a>
+  <div class="meta ">
+    <div class="date">
+      <img src="assets/clock.png" height="15px" width="15px"> {{ blog.created_at | date:"dd-MM-yyyy"}}
+    </div>
+    <div class="Author">
+      <img src="assets/newspaper.png" height="15px" width="15px">{{blog.author}}
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="article_text">
+    <div [innerHTML]="blog.article"></div>
+  </div>
+</article>
+</div>
