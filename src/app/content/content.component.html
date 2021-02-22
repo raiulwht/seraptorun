@@ -1,11 +1,11 @@
-<img src="assets/stjobs-04.jpg" class="bg bosluk2">
-<div class="beyaz">
+<img src="assets/stjobs-04.jpg" class="inner_picture bosluk2">
+<div class="upper_part">
   <featured-image [img]="'assets/stonee2.png'"></featured-image>
   <section class="services">
     <div class="container">
       <div class="row justify-content-center">
         <div class="input_container  a2 col-sm-12  col-md-12 col-12 " style="margin-bottom:20px;">
-          <div type="text" class="awsome_input">
+          <div type="text" class="awesome_input">
             <div class="box">
               <div class="row justify-content-center ">
                 <div class="fas fa-thumbs-up fa-5x logo"></div>
@@ -14,10 +14,10 @@
                 <h3>Dijital Dönüşüm</h3>
               </div>
             </div>
-          </div><span class="awsome_input_border"></span>
+          </div><span class="awesome_input_border"></span>
         </div>
         <div class="input_container col-sm-12  col-md-12 col-12 a2 " style="margin-bottom:20px;  ">
-          <div type="text" class="awsome_input">
+          <div type="text" class="awesome_input">
             <div class="box">
               <div class="row justify-content-center">
                 <div class="fas fa-newspaper fa-5x logo"></div>
@@ -27,10 +27,10 @@
               </div>
 
             </div>
-          </div><span class="awsome_input_border"></span>
+          </div><span class="awesome_input_border"></span>
         </div>
         <div class="input_container col-sm-12  col-md-12 col-12 a2 " style="margin-bottom:20px;  ">
-          <div type="text" class="awsome_input">
+          <div type="text" class="awesome_input">
             <div class="box">
               <div class="row justify-content-center">
                 <div class="fas fa-bank fa-5x logo"></div>
@@ -39,61 +39,28 @@
                 <h3>Markalaşma</h3>
               </div>
             </div>
-          </div><span class="awsome_input_border"></span>
+          </div><span class="awesome_input_border"></span>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<div class="beyaz2">
-  <img src="assets/stjobs-04.jpg" class="bg2 img-fluid">
+<div class="bottom_part">
+  <img src="assets/stjobs-04.jpg" class="alternative_inner_picture img-fluid">
   <section class="news">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 içbaşlık">
-          <h3 class="icbaşlık">Son Yazılar</h3>
+        <div class="col-md-12 inner_hood">
+          <h3 class="inner_hood">Son Yazılar</h3>
+      
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container yazi2 ">
+  <div class="container posts ">
     <div class="row  justify-content-center">
-
-      <div class="postbox offset-2 offset-sm-5 offset-xl-0 offset-md-5 offset-lg-1 " *ngFor="let blog of blogs | async">
-
-        <img style="border-radius:10px; width:400px; height:200px;" class="img-fluid" [src]="blog.thumbnail">
-
-        <article class="small">
-
-          <a routerLink="/post/{{blog.slug}}">
-            <a class="blogthumb" style="text-decoration:none;" routerLinkActive="active">
-              <div class="col-12">
-                <h1 style=" padding-right:0px;    text-decoration: none;"><u>
-                    <abbr title='{{ blog.title }}'>
-                      <div style="overflow: hidden; white-space: nowrap; text-overflow:line;">
-                        {{blog.title}}</div>
-                    </abbr>
-                  </u>
-                </h1>
-              </div>
-            </a>
-          </a>
-          <div class="meta ">
-            <div class="date">
-              <img src="assets/clock.png" height="15px" width="15px"> {{ blog.created_at | date:"dd-MM-yyyy"}}
-            </div>
-            <div class="Author">
-              <img src="assets/newspaper.png" height="15px" width="15px">{{blog.author}}
-            </div>
-            <div class="clear"></div>
-          </div>
-          <div class="yazii">
-            <div [innerHTML]="blog.article"></div>
-          </div>
-        </article>
-      </div>
     </div>
   </div>
 </div>
