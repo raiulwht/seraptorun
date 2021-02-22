@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CategoryComponent } from './category/category.component';
 import { MinimalPostComponent } from './components/minimal-post/minimal-post.component';
+import { PostsComponent } from './posts/posts.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MinimalPostComponent } from './components/minimal-post/minimal-post.com
     FeaturedImageComponent,
     SearchMenuComponent,
     CategoryComponent,
-    MinimalPostComponent
+    MinimalPostComponent,
+    PostsComponent
   ],
   imports: [
     CommonModule,
